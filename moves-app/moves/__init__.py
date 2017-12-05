@@ -16,13 +16,13 @@ import time
 import eventlet
 
 from flask import Flask, render_template, request,jsonify
-from flask.ext.socketio import SocketIO
+from flask_socketio import SocketIO
 
 import helper_functions
 
 eventlet.monkey_patch()
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, engineio_logger=True)
 
 @app.route("/")
 def index():
