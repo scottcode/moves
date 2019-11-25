@@ -1,4 +1,4 @@
 movesParams = {
-    "trainAppUrl": "https://test-training-jyi.cfapps.io:4443",
-    "scoreAppUrl": "https://test-scoring-jyi.cfapps.io:4443"
+    "trainAppUrl": "https://moves-train.apps.pcfone.io:4443",
+    "scoreAppUrl": "https://moves-score.apps.pcfone.io:4443"
 }

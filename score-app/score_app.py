@@ -45,7 +45,7 @@ def after_request(response):
   response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   return response
 
-@app.route('/score/<string:channel>')
+@app.route('/score/<string:channel>', methods=['GET'])
 def score(channel):
     model_store_key = 'channel_{}_model'.format(channel)
     cl = cPickle.loads(r[model_store_key])

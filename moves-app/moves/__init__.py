@@ -24,23 +24,23 @@ eventlet.monkey_patch()
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def index():
     return render_template('index.html',)
 
-@app.route("/train")
+@app.route("/train", methods=['GET'])
 def train():
     return render_template('train.html',)
 
-@app.route("/dashboard/<string:channel>")
+@app.route("/dashboard/<string:channel>", methods=['GET'])
 def dashboard(channel):
     return render_template('dashboard.html',channel = str(channel))
 
-@app.route("/sensor")
+@app.route("/sensor", methods=['GET'])
 def sensor():
     return render_template('sensor.html',)
 
-@app.route("/about")
+@app.route("/about", methods=['GET'])
 def about():
     return render_template('about.html',)
 

@@ -34,7 +34,7 @@ def after_request(response):
   return response
 
 # train a model and delete the training data
-@app.route('/train/<string:channel>')
+@app.route('/train/<string:channel>', methods=['GET'])
 def train(channel):
     # show the post with the given id, the id is an integer
     #model_train

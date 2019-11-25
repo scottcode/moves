@@ -1,27 +1,30 @@
 applications:
-- buildpack: python_buildpack
+- buildpacks:
+    - python_buildpack
   command: python runserver.py
   disk_quota: 1024MB
   memory: 1024MB
-  name: DASHBOARD-APP-NAME
+  name: moves
   random-route: false
   path: ./moves-app
   services:
   - moves-redis
-- buildpack: https://github.com/ihuston/python-conda-buildpack.git
+- buildpacks:
+    - python_buildpack
   command: python train_app.py
   instances: 1
   memory: 1024M
-  name: TRAINING-APP-NAME
+  name: moves-train
   path: ./train-app
   random-route: false
   services:
   - moves-redis
-- buildpack: https://github.com/ihuston/python-conda-buildpack.git
+- buildpacks:
+    - python_buildpack
   command: python score_app.py
   instances: 1
   memory: 1024M
-  name: SCORING-APP-NAME
+  name: moves-score
   path: ./score-app
   random-route: false
   services:
